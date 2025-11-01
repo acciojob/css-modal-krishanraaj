@@ -7,20 +7,14 @@ openBtn.addEventListener('click', () => {
   modal.style.display = 'block';
 });
 
-// Close via close button
+// Close when clicking on X
 closeBtn.addEventListener('click', () => {
   modal.style.display = 'none';
 });
 
-// Close when clicking outside modal-content
-document.addEventListener('click', (event) => {
-  const modalContent = document.querySelector('.modal-content');
-  // If modal is open and the click is not inside modal-content or open button
-  if (
-    modal.style.display === 'block' &&
-    !modalContent.contains(event.target) &&
-    event.target !== openBtn
-  ) {
+// ✅ Close when clicking outside modal-content (Cypress safe)
+window.addEventListener('click', (event) => {
+  if (event.target.classList.contains('modal')) {
     modal.style.display = 'none';
   }
 });
