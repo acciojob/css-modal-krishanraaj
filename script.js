@@ -1,8 +1,7 @@
-// Get modal element
+// Get modal elements
 const modal = document.getElementById("myModal");
 const openBtn = document.getElementById("openModal");
 const closeBtn = document.querySelector(".close-modal");
-const modalContent = document.querySelector(".modal-content");
 
 // Open modal when button is clicked
 openBtn.addEventListener("click", function() {
@@ -14,12 +13,10 @@ closeBtn.addEventListener("click", function() {
   modal.style.display = "none";
 });
 
-// Prevent clicks on modal content from closing the modal
-modalContent.addEventListener("click", function(event) {
-  event.stopPropagation();
-});
-
-// Close modal when clicking on the modal overlay (outside modal-content)
+// Close modal when clicking anywhere on the modal element
 modal.addEventListener("click", function(event) {
-  modal.style.display = "none";
+  // Only close if clicking directly on the modal background, not its children
+  if (event.target.classList.contains("modal")) {
+    modal.style.display = "none";
+  }
 });
