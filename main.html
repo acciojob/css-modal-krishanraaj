@@ -21,28 +21,6 @@
     </div>
   </div>
 
-  <script>
-    const modal = document.getElementById('myModal');
-    const openBtn = document.getElementById('openModal');
-    const closeBtn = document.querySelector('.close-modal');
-
-    // Open modal
-    openBtn.onclick = function() {
-      modal.style.display = 'block';
-    };
-
-    // Close when clicking close button
-    closeBtn.onclick = function() {
-      modal.style.display = 'none';
-    };
-
-    // Close when clicking background (outside modal-content)
-    modal.addEventListener('click', function (e) {
-      // if click target is modal itself (background)
-      if (e.target.classList.contains('modal')) {
-        modal.style.display = 'none';
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -1,21 +1,20 @@
-//your JS code here. If required.
 const modal = document.getElementById('myModal');
 const openBtn = document.getElementById('openModal');
 const closeBtn = document.querySelector('.close-modal');
 
 // Open modal
-openBtn.onclick = function() {
-  modal.style.display = 'flex';
+openBtn.onclick = () => {
+  modal.style.display = 'block';
 };
 
-// Close modal when clicking the close button
-closeBtn.onclick = function() {
+// Close via close button
+closeBtn.onclick = () => {
   modal.style.display = 'none';
 };
 
-// Close modal when clicking outside the modal-content
-window.onclick = function(event) {
-  if (event.target === modal) {
+// Close when clicking outside modal content
+window.onclick = (event) => {
+  if (event.target === modal && modal.style.display === 'block') {
     modal.style.display = 'none';
   }
 };
