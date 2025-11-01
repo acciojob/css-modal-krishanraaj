@@ -12,29 +12,26 @@ button {
 
 /* The Modal (background) */
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* Modal Content Box */
+/* Modal Content */
 .modal-content {
-  background-color: #fff;
+  background-color: white;
   margin: 15% auto;
   padding: 20px;
   border-radius: 8px;
   width: 50%;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
   position: relative;
 }
 
-/* Header & Close Button */
 .modal-header {
   display: flex;
   justify-content: space-between;
@@ -43,8 +40,8 @@ button {
 
 .close-modal {
   font-size: 24px;
-  cursor: pointer;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .modal-body {
