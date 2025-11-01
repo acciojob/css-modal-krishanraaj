@@ -22,7 +22,7 @@ body {
   background-color: #0056b3;
 }
 
-/* Modal background */
+/* Modal overlay */
 .modal {
   display: none;
   position: fixed;
@@ -34,7 +34,7 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
-/* Modal box */
+/* Modal content */
 .modal-content {
   background-color: #fff;
   border-radius: 10px;

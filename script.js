@@ -7,15 +7,20 @@ openBtn.addEventListener('click', () => {
   modal.style.display = 'block';
 });
 
-// Close modal using close button
+// Close via close button
 closeBtn.addEventListener('click', () => {
   modal.style.display = 'none';
 });
 
-// Close modal when clicking outside the content box
-modal.addEventListener('click', (event) => {
-  // if the clicked element is the modal background itself
-  if (event.target === modal) {
+// Close when clicking outside modal-content
+document.addEventListener('click', (event) => {
+  const modalContent = document.querySelector('.modal-content');
+  // If modal is open and the click is not inside modal-content or open button
+  if (
+    modal.style.display === 'block' &&
+    !modalContent.contains(event.target) &&
+    event.target !== openBtn
+  ) {
     modal.style.display = 'none';
   }
 });
