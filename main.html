@@ -31,17 +31,18 @@
       modal.style.display = 'block';
     };
 
-    // Close modal when clicking the close button
+    // Close when clicking close button
     closeBtn.onclick = function() {
       modal.style.display = 'none';
     };
 
-    // Close modal when clicking outside modal-content
-    window.onclick = function(event) {
-      if (event.target === modal) {
+    // Close when clicking background (outside modal-content)
+    modal.addEventListener('click', function (e) {
+      // if click target is modal itself (background)
+      if (e.target.classList.contains('modal')) {
         modal.style.display = 'none';
       }
-    };
+    });
   </script>
 </body>
 </html>
